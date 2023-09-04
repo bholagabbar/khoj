@@ -36,3 +36,6 @@ main.js
 
 # obsidian
 data.json
+
+# Exclude docker-compose swap files
+.docker-compose.yml.swp

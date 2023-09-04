@@ -24,5 +24,8 @@ services:
       # You can set these volumes to point to empty directories on host
       - ./tests/data/embeddings/:/root/.khoj/content/
       - ./tests/data/models/:/root/.khoj/search/
+      # /data directory is where all the indexed data is stored
+      # The container loses all the data on restart if this volume is not mounted
+      - ./data:/data
     # Use 0.0.0.0 to explicitly set the host ip for the service on the container. https://pythonspeed.com/articles/docker-connection-refused/
     command: --host="0.0.0.0" --port=42110 -c=config/khoj_docker.yml -vv
